@@ -5,18 +5,21 @@ globs:
 # 9mem — Cursor Rule
 
 Before any task:
-1. Read SESSION.md
-2. Read the last 5 entries of log.md
+1. Resolve the central vault (this repository by default).
+2. Read SESSION.md and index.md.
+3. Create a task record with `node tools/9mem.mjs start-task "Task description" --project owner/repo`.
+4. Fill in the request, project, and actionable plan before substantive work.
 
 At each milestone:
-1. Document what was accomplished
-2. Note decisions and blockers
-3. Update SESSION.md with current state
+1. Append a timestamped milestone with `node tools/9mem.mjs milestone <task-file> "Milestone description"`.
+2. Record decisions, outputs, and blockers in the task file.
+3. Update SESSION.md with current state.
 
 On task completion:
-1. Write session summary
-2. Append to log.md
-3. Update index.md
-4. Update relevant entity/concept pages
+1. Record changed files, validation, and remaining work.
+2. Run `node tools/9mem.mjs complete-task <task-file> "Completion summary"`.
+3. Update log.md, index.md, and relevant entity/concept pages as applicable.
 
 Use [[wikilinks]] for cross-references. Always timestamp with UTC.
+
+The dependency-free CLI supports Windows, macOS, and Linux with Node.js 22 or newer. Use `node tools/9mem.mjs <command>` or install its `9mem` executable with `npm link`.

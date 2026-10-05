@@ -1,0 +1,17 @@
+{
+  "name": "9mem-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portable command-line tools for the 9mem Markdown memory vault",
+  "type": "module",
+  "bin": {
+    "9mem": "tools/9mem.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check tools/9mem.mjs && node tools/9mem.mjs check-frontmatter && node tools/9mem.mjs check-links",
+    "test": "node --test"
+  }
+}
